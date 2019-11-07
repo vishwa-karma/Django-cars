@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Car
-from .forms import CarForm
+from .forms import CarForm, DeleteForm
 
 # Create your views here.
 def car_list(request):
@@ -38,3 +38,16 @@ def car_edit(request, pk):
     else:
         form = CarForm(instance=car)
     return render(request, 'cars/car_edit.html', {"form": form})
+
+"""def car_delete(request, pk):
+    car_to_delete = get_object_or_404(Car, pk=name)
+    if request.method == "POST":
+        form = DeleteForm(request.POST, instance=car_to_delete)
+        if form.is_valid():
+            car_to_delete.delete()
+            cars = Car.objects.all()
+            return render(request, 'cars/car_list.html', {'cars': cars})
+    else:
+        form = DeleteForm(instance=car_to_delete)
+    return render(request, 'cars/car_delete.html', {"form": form})
+    """

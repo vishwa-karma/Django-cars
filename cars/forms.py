@@ -12,3 +12,15 @@ class CarForm(forms.ModelForm):
             'ftype',
             'remarks'
             )
+
+class DeleteForm(forms.ModelForm):
+
+    class Meta:
+        model = Car
+        fields = (
+            'name',
+            'model_type',
+            'make',
+            'ftype',
+            'remarks'
+            )
