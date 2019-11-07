@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com', 'localhost']
 # Application definition
 
 INSTALLED_APPS = [
+    'students.apps.StudentsConfig',
     'cars.apps.CarsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
