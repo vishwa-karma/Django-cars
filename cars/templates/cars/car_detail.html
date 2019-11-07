@@ -1,0 +1,11 @@
+{% extends 'cars/base.html' %}
+
+{% block content %}
+<div>
+        <td><a href="{% url 'car_detail' pk=car.pk %}">{{ car.name }}</a></td>
+        <td>{{ car.make }}</td>
+        <td>{{ car.model_type }}</td>
+        <td>{{ car.ftype }}</td>
+        <td>{{ car.remarks }}</td>
+</div>
+{% endblock %}
