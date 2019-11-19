@@ -1,8 +1,11 @@
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, get_object_or_404, redirect, HttpResponse
 from .models import Student
 from .forms import StudentForm
 
 # Create your views here.
+def index(request):
+    return HttpResponse("<h1><a href='car/'>Cars</a></h1><p>Students</p>")
+
 def student_list(request):
     students = Student.objects.all()
     return render(request, 'students/student_list.html', {'students': students})
