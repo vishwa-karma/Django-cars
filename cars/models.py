@@ -45,7 +45,7 @@ class Car(models.Model):
     model_type = models.CharField(choices = MODEL_CHOICES, max_length=200)
     make = models.CharField( choices = MAKE_CHOICES, max_length=200)
     ftype = models.CharField(choices = FUEL_CHOICES, max_length=10)
-    remarks = models.TextField()
+    remarks = models.TextField(blank=True)
 
     def __str__(self):
         return self.name
