@@ -1,0 +1,39 @@
+
+<html>
+        <head>
+            <title>Welcome to Students Database</title>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        </head>
+        <body>
+                <div class="page-header">
+                        <a href="{% url 'new_student' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+                    <h1><a href="/">Students Database</a></h1>
+                </div>
+                <div>
+                        <table class="table table-hover">
+                           <tr>
+                               <th>Student Name</th>
+                               <th>Gender</th>
+                               <th>Date of Birth</th>
+                               <th>Department</th>
+                               <th>Remarks</th>
+                           </tr>
+                           
+                           <tr>
+                               <td><a href="{% url 'student_edit' pk=student.pk %}">{{ student.name }}</a></td>
+                               <td>{{ student.gender }}</td>
+                               <td>{{ student.dob }}</td>
+                               <td>{{ student.dept }}</td>
+                               <td>{{ student.remarks }}</td>
+                           </tr>
+                           
+                       </table> 
+                   </div>
+               
+                        
+        </body>
+    </html>

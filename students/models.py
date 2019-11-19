@@ -18,9 +18,9 @@ DEPARTMENT_LIST = [
 class Student(models.Model):
     name = models.CharField(max_length=200)
     gender = models.CharField(max_length=10, choices=GENDER_LIST)
-    dob = models.DateField()
+    dob = models.DateTimeField(blank=True, null=True)
     dept = models.CharField(max_length=50, choices=DEPARTMENT_LIST)
-    remarks = models.TextField
+    remarks = models.TextField(blank=True, null=True)
 
     def __str__(self):
         return self.name
